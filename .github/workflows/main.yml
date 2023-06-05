@@ -1,0 +1,24 @@
+name: Automation E2E tests on GUI app
+
+on: 
+  push:
+    branches: ['main']
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  checkout-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: run cypress tests with chrome
+        uses: cypress-io/github-action@v5
+        timeout-minutes: 10
+        with:
+          browser: chrome
+          headed: false
