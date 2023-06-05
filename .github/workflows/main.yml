@@ -1,9 +1,11 @@
 name: Automation E2E tests on GUI app
 
 on: 
-  schedule:
+ push:
+    branches: ['main']
+ schedule:
     - cron: '* * * * *'
-  workflow_dispatch:
+ workflow_dispatch:
 
 jobs:
   checkout-and-test:
