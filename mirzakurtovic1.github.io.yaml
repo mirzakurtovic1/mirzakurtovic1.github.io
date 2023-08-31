@@ -1,0 +1,12 @@
+namespace: mirzakurtovic1.github.io
+mirzakurtovic1.github.io:
+  defines: runnable
+  metadata:
+    name: mirzakurtovic1.github.io
+    description: >-
+      A personal website that contains embedded YouTube videos and a schedule
+      booking system via Calendly.
+    icon: https://emojiapi.dev/api/v1/earth_africa.svg
+  containers:
+    mirzakurtovic1.github.io:
+      build: .
