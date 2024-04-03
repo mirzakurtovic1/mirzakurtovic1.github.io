@@ -2,6 +2,122 @@
 <html>
 <head>
 
+<!-- Start Tracking Code for analytics_facebook -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+
+    fbq("set", "autoConfig", "false", "380331243355837");
+    fbq("dataProcessingOptions", ["LDU"], 0, 0);
+    fbq("init", "380331243355837");
+    fbq("set", "agent", "plbigcommerce1.2", "380331243355837");
+
+    function trackEvents() {
+      var pathName = window.location.pathname;
+
+      fbq(
+        "track",
+        "PageView",
+        {},
+        { eventID: "store-10-prd-us-central1-134879626385" }
+      );
+
+      // Search events start -- only fire if the shopper lands on the /search.php page
+      if (
+        pathName.indexOf("/search.php") === 0 &&
+        getUrlParameter("search_query")
+      ) {
+        fbq("track", "Search", {
+          content_type: "product_group",
+          content_ids: [],
+          search_string: getUrlParameter("search_query"),
+        });
+      }
+      // Search events end
+
+      // Wishlist events start -- only fire if the shopper attempts to add an item to their wishlist
+      if (
+        pathName.indexOf("/wishlist.php") === 0 &&
+        getUrlParameter("added_product_id")
+      ) {
+        fbq("track", "AddToWishlist", {
+          content_type: "product_group",
+          content_ids: [],
+        });
+      }
+      // Wishlist events end
+
+      // Lead events start -- only fire if the shopper subscribes to newsletter
+      if (
+        pathName.indexOf("/subscribe.php") === 0 &&
+        getUrlParameter("result") === "success"
+      ) {
+        fbq("track", "Lead", {});
+      }
+      // Lead events end
+
+      // Registration events start -- only fire if the shopper registers an account
+      if (
+        pathName.indexOf("/login.php") === 0 &&
+        getUrlParameter("action") === "account_created"
+      ) {
+        fbq("track", "CompleteRegistration", {}, "");
+      }
+      // Registration events end
+
+      // Checkout events start -- only fire if the shopper lands on a /checkout* page
+      if (
+        pathName === "/checkout.php" ||
+        /^\/(embedded-)?checkout$/.test(pathName)
+      ) {
+        if (getUrlParameter("action") === "process_payment") {
+          fbq("track", "AddPaymentInfo");
+        } else {
+          fbq("track", "InitiateCheckout");
+        }
+      }
+      // Checkout events end
+
+      function getUrlParameter(name) {
+        var cleanName = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + cleanName + "=([^&#]*)");
+        var results = regex.exec(window.location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener("load", trackEvents, false);
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display: none" alt="null"
+      src="https://www.facebook.com/tr?id=380331243355837&ev=PageView&noscript=1&a=plbigcommerce1.2&eid=store-10-prd-us-central1-134879626385" />
+  </noscript>
+  <!-- End Tracking Code for analytics_facebook -->
+  
 </head>
 <body>
   
