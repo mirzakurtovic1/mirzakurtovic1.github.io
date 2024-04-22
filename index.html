@@ -1,141 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<script src="https://app.secureprivacy.ai/script/659bd158b421673087b5045c.js"></script>
-  
-<!-- Start Tracking Code for analytics_facebook -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js"
-    );
-
-    fbq("set", "autoConfig", "false", "380331243355837");
-    fbq("dataProcessingOptions", ["LDU"], 0, 0);
-    fbq("init", "380331243355837");
-    fbq("set", "agent", "plbigcommerce1.2", "380331243355837");
-
-    function trackEvents() {
-      var pathName = window.location.pathname;
-
-      fbq(
-        "track",
-        "PageView",
-        {},
-        { eventID: "store-10-prd-us-central1-134879626385" }
-      );
-
-      // Search events start -- only fire if the shopper lands on the /search.php page
-      if (
-        pathName.indexOf("/search.php") === 0 &&
-        getUrlParameter("search_query")
-      ) {
-        fbq("track", "Search", {
-          content_type: "product_group",
-          content_ids: [],
-          search_string: getUrlParameter("search_query"),
-        });
-      }
-      // Search events end
-
-      // Wishlist events start -- only fire if the shopper attempts to add an item to their wishlist
-      if (
-        pathName.indexOf("/wishlist.php") === 0 &&
-        getUrlParameter("added_product_id")
-      ) {
-        fbq("track", "AddToWishlist", {
-          content_type: "product_group",
-          content_ids: [],
-        });
-      }
-      // Wishlist events end
-
-      // Lead events start -- only fire if the shopper subscribes to newsletter
-      if (
-        pathName.indexOf("/subscribe.php") === 0 &&
-        getUrlParameter("result") === "success"
-      ) {
-        fbq("track", "Lead", {});
-      }
-      // Lead events end
-
-      // Registration events start -- only fire if the shopper registers an account
-      if (
-        pathName.indexOf("/login.php") === 0 &&
-        getUrlParameter("action") === "account_created"
-      ) {
-        fbq("track", "CompleteRegistration", {}, "");
-      }
-      // Registration events end
-
-      // Checkout events start -- only fire if the shopper lands on a /checkout* page
-      if (
-        pathName === "/checkout.php" ||
-        /^\/(embedded-)?checkout$/.test(pathName)
-      ) {
-        if (getUrlParameter("action") === "process_payment") {
-          fbq("track", "AddPaymentInfo");
-        } else {
-          fbq("track", "InitiateCheckout");
-        }
-      }
-      // Checkout events end
-
-      function getUrlParameter(name) {
-        var cleanName = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-        var regex = new RegExp("[\?&]" + cleanName + "=([^&#]*)");
-        var results = regex.exec(window.location.search);
-        return results === null
-          ? ""
-          : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
-    }
-
-    if (window.addEventListener) {
-      window.addEventListener("load", trackEvents, false);
-    }
-  </script>
-  <noscript><img height="1" width="1" style="display: none" alt="null"
-      src="https://www.facebook.com/tr?id=380331243355837&ev=PageView&noscript=1&a=plbigcommerce1.2&eid=store-10-prd-us-central1-134879626385" />
-  </noscript>
-  <!-- End Tracking Code for analytics_facebook -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PSR3PVD');</script>
+<!-- End Google Tag Manager -->
   
 </head>
 <body>
-  
-<b>mobile test</b>stg
-  <span id="sp-tb-embed-widget" onclick="window.parent.sp.openPreferenceCenter();">Widget</span>
-  <button onclick="window.parent.sp.switchLanguage('fr', 'privacy-banner', true)">change language to FR</button>
-  <hr>
 
-  <hr>
-  <iframe width="1904" height="742" src="https://www.youtube.com/embed/K4DyBUG242c" title="Cartoon - On &amp; On (feat. Daniel Levi) | Electronic Pop | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-  <hr>
-  <span id="sp-tb-embed-widget" class="sp-tb-embed-btn" onclick="window.sp.showPrivacyBanner();">privaatheid</span>
-  <hr>
-  <a href="javascript:void(0);" onclick="window.sp.showPrivacyBanner();">privaatheid</a>
-    <hr>
-  PP: <div sp-privacy-policy-text="direct-text" sp-lang-code="en"></div>
-  <hr>
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSR3PVD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<hr>
+  <span id="sp-tb-embed-widget" onclick="window.parent.sp.openPreferenceCenter();">test</span>
+<hr>
+<iframe src="https://www.youtube.com/embed/yUXJjIvhZz8"
+width="560" height="315" frameborder="0" allowfullscreen></iframe>
+<hr>
+<iframe src="https://www.youtube.com/embed/-ObdvMkCKws"
+width="560" height="315" frameborder="0" allowfullscreen></iframe>
+<hr>
+<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/car-satnav-gps/">car gps</a></iframe></div>
+</body>
 </html>
