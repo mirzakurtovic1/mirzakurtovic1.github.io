@@ -1,58 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script type="text/javascript" src="https://frontend-staging.secureprivacy.ai/script/6662ea29667f5ef98c919cad.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproduce CSP Issue</title>
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-randomNonceValue' https://www.googletagmanager.com/gtag/js;">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PSR3PVD');</script>
-<!-- End Google Tag Manager -->
-
-  
 </head>
 <body>
+    <h1>Testing CSP Inline Script Blocking</h1>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSR3PVD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Inline script (will be blocked by CSP) -->
+    <script>
+        console.log('This inline script will be blocked due to the CSP');
+    </script>
 
-  
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNNNKBK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<hr>
-
-  <iframe
-  height="600"
-  width="100%"
-  style="border: 1px solid #d0daeb;border-radius:12px;"
-  data-sp-embed-policy-initial-language="en"
-  onload='!function(e){var t=e.getAttribute("data-sp-embed-policy-initial-language")||"en",i=e.contentWindow,n=document.createElement("script");n.src="https:\/\/test-v2.secureprivacy.ai\/sp-embed-policy.js",i.spEmbedData={AdminId:"3265",InitialLanguage:t,Url:window.location.href,PolicyIds:null},i.document.head.appendChild(n)}(this)'
-></iframe>
-  
-  <hr>
-  
-
-<b>Small</b>a
-  <button onclick="window.parent.sp.switchLanguage('fr', 'privacy-banner', true)">change language to FR</button>
-<a href="javascript:void(0);" onclick="window.sp.showPrivacyBanner();">Custom text</a>
-
-<hr>
-  NEW
-
-  
-<hr>
-<iframe src="https://www.youtube.com/embed/yUXJjIvhZz8"
-width="560" height="315" frameborder="0" allowfullscreen></iframe>
-<hr>
-<iframe src="https://www.youtube.com/embed/-ObdvMkCKws"
-width="560" height="315" frameborder="0" allowfullscreen></iframe>
-<br>
-<hr>
-<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/car-satnav-gps/">car gps</a></iframe></div>
+    <!-- External script (allowed by CSP if served from 'self') -->
+    <script src="https://www.googletagmanager.com/gtag/js"></script>
 
 </body>
 </html>
