@@ -6,7 +6,7 @@
     <title>Reproduce CSP Issue</title>
     
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-randomNonceValue' https://www.googletagmanager.com/gtag/js;">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-randomNonceValue' https://www.googletagmanager.com/gtag/js https://app.secureprivacy.ai/script/670e53ccb15e6136b8b28020.js;">
 
 </head>
 <body>
@@ -17,7 +17,10 @@
         console.log('This inline script will be blocked due to the CSP');
     </script>
 
-    <!-- External script (allowed by CSP if served from 'self') -->
+    <!-- External script from secureprivacy.ai (allowed by CSP if correctly whitelisted) -->
+    <script src="https://app.secureprivacy.ai/script/670e53ccb15e6136b8b28020.js"></script>
+
+    <!-- External script from Google Tag Manager (allowed by CSP) -->
     <script src="https://www.googletagmanager.com/gtag/js"></script>
 
 </body>
