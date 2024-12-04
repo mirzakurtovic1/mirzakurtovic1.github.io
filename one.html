@@ -3,25 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproduce CSP Issue</title>
+    <title>Testing banners</title>
     
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-randomNonceValue' https://www.googletagmanager.com/gtag/js https://app.secureprivacy.ai/script/670e53ccb15e6136b8b28020.js;">
-
+<script src="https://frontend-test.secureprivacy.ai/script/674f0851c0655f6901638398.js"></script>
+    <script src="https://www.googletagmanager.com/gtag/js"></script>
 </head>
 <body>
-    <h1>Testing CSP Inline Script Blocking</h1>
+    <h1>Testing banners</h1>
 
-    <!-- Inline script (will be blocked by CSP) -->
-    <script>
-        console.log('This inline script will be blocked due to the CSP');
-    </script>
 
-    <!-- External script from secureprivacy.ai (allowed by CSP if correctly whitelisted) -->
-    <script src="https://app.secureprivacy.ai/script/670e53ccb15e6136b8b28020.js"></script>
-
-    <!-- External script from Google Tag Manager (allowed by CSP) -->
-    <script src="https://www.googletagmanager.com/gtag/js"></script>
 
 </body>
 </html>
